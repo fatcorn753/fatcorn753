@@ -1,29 +1,23 @@
 
 <div align="center">
   <img src="./explosion.svg?v=1" width="100%" alt="fatcorn753" />
-  <p>上記アニメーション: https://github.com/fatcorn753/github-profile-badge</p>
 </div>
 
 <div align="center">
   <img src="./neon.svg?v=1" width="100%" alt="fatcorn753" />
-  <p>上記アニメーション: </p>
 </div>
 
 <div align="center">
   <img src="./glitch.svg?v=1" width="100%" alt="fatcorn753" />
-  <p>上記アニメーション: </p>
 </div>
 
+<div align="center">
+  <a href="https://github.com/fatcorn753/github-profile-badges">
+    ⭐️ これらのバッジは <b>github-profile-badges</b> で配布しています ⭐
+  </a>
+</div>
 
 <div align="center">
-
-  <!-- タイピング風アニメーション -->
-  <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1000&color=00F0FF&center=true&vCenter=true&width=435&lines=Software+Developer;Building+Cool+Projects..." alt="Typing SVG" />
-  </a>
-
-  <br /><br />
-
   <!-- フォローボタン -->
   <a href="https://github.com/fatcorn753?tab=followers">
     <img src="https://img.shields.io/github/followers/fatcorn753?label=Follow&style=for-the-badge&logo=github&color=2ea44f" alt="Follow me on GitHub" />
