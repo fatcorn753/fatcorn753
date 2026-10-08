@@ -1,6 +1,6 @@
 
 <div align="center">
-  <img src="./explosion.svg" width="100%" alt="fatcorn753" />
+  <img src="./explosion.svg?v=1" width="100%" alt="fatcorn753" />
 </div>
 
 <div align="center">
