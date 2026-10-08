@@ -1,3 +1,8 @@
+
+<div align="center">
+  <img src="./explosion.svg" width="100%" alt="fatcorn753" />
+</div>
+
 <div align="center">
 
   <!-- タイピング風アニメーション -->
