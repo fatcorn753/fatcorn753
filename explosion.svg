@@ -1,82 +1,66 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="600" height="180" viewBox="0 0 600 180">
   <style>
-    /* 背景 */
     .bg { fill: #0d1117; rx: 12px; }
-
-    /* ユーザー名のアニメーション（3秒周期で完全ループ） */
-    .username {
+    .text-style {
       font-family: 'Fira Code', 'Courier New', monospace;
       font-size: 38px;
       font-weight: 800;
       fill: #ffffff;
-      opacity: 0;
-      transform-origin: 300px 90px;
-      animation: popInLoop 3s cubic-bezier(0.175, 0.885, 0.32, 1.275) infinite;
-    }
-    @keyframes popInLoop {
-      0% { opacity: 0; transform: scale(0.3); }
-      12% { opacity: 0; transform: scale(0.3); }
-      22% { opacity: 1; transform: scale(1.1); }
-      26% { opacity: 1; transform: scale(1); }
-      80% { opacity: 1; transform: scale(1); }
-      90% { opacity: 0; transform: scale(0.8); }
-      100% { opacity: 0; transform: scale(0.3); }
-    }
-
-    /* 衝撃波エフェクト（3秒周期で完全ループ） */
-    .shockwave {
-      fill: none;
-      stroke: #00f0ff;
-      stroke-width: 4;
-      opacity: 0;
-      transform-origin: 300px 90px;
-      animation: shockLoop 3s ease-out infinite;
-    }
-    @keyframes shockLoop {
-      0% { r: 0px; opacity: 0; stroke-width: 8; }
-      8% { r: 0px; opacity: 0; stroke-width: 8; }
-      10% { opacity: 1; }
-      30% { r: 130px; opacity: 0; stroke-width: 1; }
-      100% { r: 130px; opacity: 0; stroke-width: 1; }
-    }
-
-    /* 爆発粒子の共通アニメーション（3秒周期で完全ループ） */
-    .p {
-      transform-origin: 300px 90px;
-      animation: explodeLoop 3s cubic-bezier(0.1, 0.8, 0.3, 1) infinite;
-      opacity: 0;
-    }
-
-    @keyframes explodeLoop {
-      0% { opacity: 0; transform: translate(0, 0) scale(1.5); }
-      8% { opacity: 0; transform: translate(0, 0) scale(1.5); }
-      10% { opacity: 1; }
-      30% { opacity: 1; }
-      35% { opacity: 0; transform: translate(var(--dx), var(--dy)) scale(0); }
-      100% { opacity: 0; transform: translate(var(--dx), var(--dy)) scale(0); }
     }
   </style>
 
   <!-- 背景 -->
   <rect width="100%" height="100%" class="bg" />
 
-  <!-- 衝撃波エフェクト -->
-  <circle cx="300" cy="90" class="shockwave" />
+  <!-- 衝撃波エフェクト（SMILで無限ループ） -->
+  <circle cx="300" cy="90" r="0" fill="none" stroke="#00f0ff" stroke-width="8" opacity="0">
+    <animate attributeName="r" values="0; 0; 130; 130" keyTimes="0; 0.1; 0.35; 1" dur="3s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0; 1; 0; 0" keyTimes="0; 0.1; 0.35; 1" dur="3s" repeatCount="indefinite" />
+    <animate attributeName="stroke-width" values="8; 8; 1; 1" keyTimes="0; 0.1; 0.35; 1" dur="3s" repeatCount="indefinite" />
+  </circle>
 
-  <!-- 爆発粒子（色とりどりの円が全方向に弾ける） -->
-  <circle cx="300" cy="90" r="6" fill="#ff2a5f" class="p" style="--dx: -120px; --dy: -60px;" />
-  <circle cx="300" cy="90" r="8" fill="#00f0ff" class="p" style="--dx: 110px; --dy: -70px;" />
-  <circle cx="300" cy="90" r="5" fill="#ffe600" class="p" style="--dx: -140px; --dy: 30px;" />
-  <circle cx="300" cy="90" r="7" fill="#00ff66" class="p" style="--dx: 130px; --dy: 50px;" />
-  <circle cx="300" cy="90" r="9" fill="#ff7700" class="p" style="--dx: -50px; --dy: -80px;" />
-  <circle cx="300" cy="90" r="6" fill="#b026ff" class="p" style="--dx: 60px; --dy: 80px;" />
-  <circle cx="300" cy="90" r="7" fill="#ff2a5f" class="p" style="--dx: -90px; --dy: 70px;" />
-  <circle cx="300" cy="90" r="5" fill="#00f0ff" class="p" style="--dx: 100px; --dy: -40px;" />
-  <circle cx="300" cy="90" r="8" fill="#ffe600" class="p" style="--dx: 0px; --dy: -90px;" />
-  <circle cx="300" cy="90" r="6" fill="#00ff66" class="p" style="--dx: 20px; --dy: 90px;" />
+  <!-- 爆発粒子グループ -->
+  <g transform="translate(300, 90)">
+    <!-- 粒子1 -->
+    <circle cx="0" cy="0" r="6" fill="#ff2a5f">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,0; -120,-60; -120,-60" keyTimes="0; 0.1; 0.35; 1" dur="3s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0; 1; 0; 0" keyTimes="0; 0.1; 0.35; 1" dur="3s" repeatCount="indefinite" />
+    </circle>
+    <!-- 粒子2 -->
+    <circle cx="0" cy="0" r="8" fill="#00f0ff">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,0; 110,-70; 110,-70" keyTimes="0; 0.1; 0.35; 1" dur="3s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0; 1; 0; 0" keyTimes="0; 0.1; 0.35; 1" dur="3s" repeatCount="indefinite" />
+    </circle>
+    <!-- 粒子3 -->
+    <circle cx="0" cy="0" r="5" fill="#ffe600">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,0; -140,30; -140,30" keyTimes="0; 0.1; 0.35; 1" dur="3s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0; 1; 0; 0" keyTimes="0; 0.1; 0.35; 1" dur="3s" repeatCount="indefinite" />
+    </circle>
+    <!-- 粒子4 -->
+    <circle cx="0" cy="0" r="7" fill="#00ff66">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,0; 130,50; 130,50" keyTimes="0; 0.1; 0.35; 1" dur="3s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0; 1; 0; 0" keyTimes="0; 0.1; 0.35; 1" dur="3s" repeatCount="indefinite" />
+    </circle>
+    <!-- 粒子5 -->
+    <circle cx="0" cy="0" r="9" fill="#ff7700">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,0; -50,-80; -50,-80" keyTimes="0; 0.1; 0.35; 1" dur="3s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0; 1; 0; 0" keyTimes="0; 0.1; 0.35; 1" dur="3s" repeatCount="indefinite" />
+    </circle>
+    <!-- 粒子6 -->
+    <circle cx="0" cy="0" r="6" fill="#b026ff">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,0; 60,80; 60,80" keyTimes="0; 0.1; 0.35; 1" dur="3s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0; 1; 0; 0" keyTimes="0; 0.1; 0.35; 1" dur="3s" repeatCount="indefinite" />
+    </circle>
+  </g>
 
-  <!-- 中央のユーザー名 -->
-  <text x="50%" y="50%" dominant-baseline="central" text-anchor="middle" class="username">
-    fatcorn753
-  </text>
+  <!-- 中央のユーザー名（拡大・縮小と不透明度制御） -->
+  <g transform="translate(300, 90)">
+    <g>
+      <animateTransform attributeName="transform" type="scale" values="0.3; 1.1; 1; 0.8; 0.3" keyTimes="0; 0.22; 0.26; 0.9; 1" dur="3s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0; 1; 1; 0; 0" keyTimes="0; 0.22; 0.8; 0.9; 1" dur="3s" repeatCount="indefinite" />
+      <text x="0" y="0" dominant-baseline="central" text-anchor="middle" class="text-style">
+        fatcorn753
+      </text>
+    </g>
+  </g>
 </svg>
