@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="180" viewBox="0 0 600 180">
+  <style>
+    /* 背景と全体の共通スタイル */
+    .bg { fill: #0d1117; rx: 12px; }
+
+    /* ユーザー名の登場アニメーション */
+    .username {
+      font-family: 'Fira Code', 'Courier New', monospace;
+      font-size: 38px;
+      font-weight: 800;
+      fill: #ffffff;
+      opacity: 0;
+      animation: popIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s forwards;
+    }
+    @keyframes popIn {
+      0% { opacity: 0; transform: scale(0.3); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    /* 爆発の波紋（衝撃波） */
+    .shockwave {
+      fill: none;
+      stroke: #00f0ff;
+      stroke-width: 4;
+      opacity: 0;
+      transform-origin: 300px 90px;
+      animation: shock 0.8s ease-out 0.3s forwards;
+    }
+    @keyframes shock {
+      0% { r: 0px; opacity: 1; stroke-width: 8; }
+      100% { r: 120px; opacity: 0; stroke-width: 1; }
+    }
+
+    /* 爆发粒子の共通アニメーション */
+    .p {
+      transform-origin: 300px 90px;
+      animation: explode 0.8s cubic-bezier(0.1, 0.8, 0.3, 1) 0.3s forwards;
+      opacity: 0;
+    }
+
+    @keyframes explode {
+      0% { opacity: 1; transform: translate(0, 0) scale(1.5); }
+      70% { opacity: 1; }
+      100% { opacity: 0; transform: translate(var(--dx), var(--dy)) scale(0); }
+    }
+  </style>
+
+  <!-- 背景 -->
+  <rect width="100%" height="100%" class="bg" />
+
+  <!-- 衝撃波エフェクト -->
+  <circle cx="300" cy="90" class="shockwave" />
+
+  <!-- 爆発粒子（色とりどりの円が全方向に弾ける） -->
+  <circle cx="300" cy="90" r="6" fill="#ff2a5f" class="p" style="--dx: -120px; --dy: -60px;" />
+  <circle cx="300" cy="90" r="8" fill="#00f0ff" class="p" style="--dx: 110px; --dy: -70px;" />
+  <circle cx="300" cy="90" r="5" fill="#ffe600" class="p" style="--dx: -140px; --dy: 30px;" />
+  <circle cx="300" cy="90" r="7" fill="#00ff66" class="p" style="--dx: 130px; --dy: 50px;" />
+  <circle cx="300" cy="90" r="9" fill="#ff7700" class="p" style="--dx: -50px; --dy: -80px;" />
+  <circle cx="300" cy="90" r="6" fill="#b026ff" class="p" style="--dx: 60px; --dy: 80px;" />
+  <circle cx="300" cy="90" r="7" fill="#ff2a5f" class="p" style="--dx: -90px; --dy: 70px;" />
+  <circle cx="300" cy="90" r="5" fill="#00f0ff" class="p" style="--dx: 100px; --dy: -40px;" />
+  <circle cx="300" cy="90" r="8" fill="#ffe600" class="p" style="--dx: 0px; --dy: -90px;" />
+  <circle cx="300" cy="90" r="6" fill="#00ff66" class="p" style="--dx: 20px; --dy: 90px;" />
+
+  <!-- 中央のユーザー名 -->
+  <text x="50%" y="50%" dominant-baseline="central" text-anchor="middle" class="username">
+    fatcorn753
+  </text>
+</svg>
