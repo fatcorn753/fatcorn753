@@ -1,47 +1,52 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="600" height="180" viewBox="0 0 600 180">
   <style>
-    /* 背景と全体の共通スタイル */
+    /* 背景 */
     .bg { fill: #0d1117; rx: 12px; }
 
-    /* ユーザー名の登場アニメーション */
+    /* ユーザー名のアニメーション（3秒周期でループ） */
     .username {
       font-family: 'Fira Code', 'Courier New', monospace;
       font-size: 38px;
       font-weight: 800;
       fill: #ffffff;
       opacity: 0;
-      animation: popIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s forwards;
+      animation: popInLoop 3s cubic-bezier(0.175, 0.885, 0.32, 1.275) infinite;
     }
-    @keyframes popIn {
-      0% { opacity: 0; transform: scale(0.3); }
-      100% { opacity: 1; transform: scale(1); }
+    @keyframes popInLoop {
+      0%, 12% { opacity: 0; transform: scale(0.3); } /* 爆発待ち */
+      22% { opacity: 1; transform: scale(1.1); }    /* ポップイン */
+      26%, 80% { opacity: 1; transform: scale(1); }  /* 表示をキープ */
+      90%, 100% { opacity: 0; transform: scale(0.8); } /* 消滅して次の爆発へ */
     }
 
-    /* 爆発の波紋（衝撃波） */
+    /* 衝撃波エフェクト（3秒周期でループ） */
     .shockwave {
       fill: none;
       stroke: #00f0ff;
       stroke-width: 4;
       opacity: 0;
       transform-origin: 300px 90px;
-      animation: shock 0.8s ease-out 0.3s forwards;
+      animation: shockLoop 3s ease-out infinite;
     }
-    @keyframes shock {
-      0% { r: 0px; opacity: 1; stroke-width: 8; }
-      100% { r: 120px; opacity: 0; stroke-width: 1; }
+    @keyframes shockLoop {
+      0%, 8% { r: 0px; opacity: 0; stroke-width: 8; }
+      10% { opacity: 1; }
+      30% { r: 130px; opacity: 0; stroke-width: 1; }
+      31%, 100% { opacity: 0; }
     }
 
-    /* 爆发粒子の共通アニメーション */
+    /* 爆発粒子の共通アニメーション（3秒周期でループ） */
     .p {
       transform-origin: 300px 90px;
-      animation: explode 0.8s cubic-bezier(0.1, 0.8, 0.3, 1) 0.3s forwards;
+      animation: explodeLoop 3s cubic-bezier(0.1, 0.8, 0.3, 1) infinite;
       opacity: 0;
     }
 
-    @keyframes explode {
-      0% { opacity: 1; transform: translate(0, 0) scale(1.5); }
-      70% { opacity: 1; }
-      100% { opacity: 0; transform: translate(var(--dx), var(--dy)) scale(0); }
+    @keyframes explodeLoop {
+      0%, 8% { opacity: 0; transform: translate(0, 0) scale(1.5); }
+      10% { opacity: 1; }
+      30% { opacity: 1; }
+      35%, 100% { opacity: 0; transform: translate(var(--dx), var(--dy)) scale(0); }
     }
   </style>
 
