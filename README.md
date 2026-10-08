@@ -5,6 +5,12 @@
 </div>
 
 <div align="center">
+  <img src="./neon.svg?v=1" width="100%" alt="fatcorn753" />
+  <p>上記アニメーション: </p>
+</div>
+
+
+<div align="center">
 
   <!-- タイピング風アニメーション -->
   <a href="https://git.io/typing-svg">
