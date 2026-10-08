@@ -1,11 +1,16 @@
 
 <div align="center">
   <img src="./explosion.svg?v=1" width="100%" alt="fatcorn753" />
-  <p>上記アニメーション: https://github.com/fatcorn753/github-explosion-badge</p>
+  <p>上記アニメーション: https://github.com/fatcorn753/github-profile-badge</p>
 </div>
 
 <div align="center">
   <img src="./neon.svg?v=1" width="100%" alt="fatcorn753" />
+  <p>上記アニメーション: </p>
+</div>
+
+<div align="center">
+  <img src="./glitch.svg?v=1" width="100%" alt="fatcorn753" />
   <p>上記アニメーション: </p>
 </div>
 
