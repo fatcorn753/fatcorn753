@@ -3,23 +3,27 @@
     /* 背景 */
     .bg { fill: #0d1117; rx: 12px; }
 
-    /* ユーザー名のアニメーション（3秒周期でループ） */
+    /* ユーザー名のアニメーション（3秒周期で完全ループ） */
     .username {
       font-family: 'Fira Code', 'Courier New', monospace;
       font-size: 38px;
       font-weight: 800;
       fill: #ffffff;
       opacity: 0;
+      transform-origin: 300px 90px;
       animation: popInLoop 3s cubic-bezier(0.175, 0.885, 0.32, 1.275) infinite;
     }
     @keyframes popInLoop {
-      0%, 12% { opacity: 0; transform: scale(0.3); } /* 爆発待ち */
-      22% { opacity: 1; transform: scale(1.1); }    /* ポップイン */
-      26%, 80% { opacity: 1; transform: scale(1); }  /* 表示をキープ */
-      90%, 100% { opacity: 0; transform: scale(0.8); } /* 消滅して次の爆発へ */
+      0% { opacity: 0; transform: scale(0.3); }
+      12% { opacity: 0; transform: scale(0.3); }
+      22% { opacity: 1; transform: scale(1.1); }
+      26% { opacity: 1; transform: scale(1); }
+      80% { opacity: 1; transform: scale(1); }
+      90% { opacity: 0; transform: scale(0.8); }
+      100% { opacity: 0; transform: scale(0.3); }
     }
 
-    /* 衝撃波エフェクト（3秒周期でループ） */
+    /* 衝撃波エフェクト（3秒周期で完全ループ） */
     .shockwave {
       fill: none;
       stroke: #00f0ff;
@@ -29,13 +33,14 @@
       animation: shockLoop 3s ease-out infinite;
     }
     @keyframes shockLoop {
-      0%, 8% { r: 0px; opacity: 0; stroke-width: 8; }
+      0% { r: 0px; opacity: 0; stroke-width: 8; }
+      8% { r: 0px; opacity: 0; stroke-width: 8; }
       10% { opacity: 1; }
       30% { r: 130px; opacity: 0; stroke-width: 1; }
-      31%, 100% { opacity: 0; }
+      100% { r: 130px; opacity: 0; stroke-width: 1; }
     }
 
-    /* 爆発粒子の共通アニメーション（3秒周期でループ） */
+    /* 爆発粒子の共通アニメーション（3秒周期で完全ループ） */
     .p {
       transform-origin: 300px 90px;
       animation: explodeLoop 3s cubic-bezier(0.1, 0.8, 0.3, 1) infinite;
@@ -43,10 +48,12 @@
     }
 
     @keyframes explodeLoop {
-      0%, 8% { opacity: 0; transform: translate(0, 0) scale(1.5); }
+      0% { opacity: 0; transform: translate(0, 0) scale(1.5); }
+      8% { opacity: 0; transform: translate(0, 0) scale(1.5); }
       10% { opacity: 1; }
       30% { opacity: 1; }
-      35%, 100% { opacity: 0; transform: translate(var(--dx), var(--dy)) scale(0); }
+      35% { opacity: 0; transform: translate(var(--dx), var(--dy)) scale(0); }
+      100% { opacity: 0; transform: translate(var(--dx), var(--dy)) scale(0); }
     }
   </style>
 
