@@ -12,7 +12,7 @@
 </div>
 
 <div align="center">
-  <a href="https://github.com/fatcorn753/github-profile-badges">
+  <a href="https://github.com/fatcorn753/github-profile-badge">
     ⭐️ これらのバッジは <b>github-profile-badges</b> で配布しています ⭐
   </a>
 </div>
