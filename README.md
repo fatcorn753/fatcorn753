@@ -78,21 +78,3 @@
 </div>
 
 <br />
-
-## 🔥 Activity Graph
-
-<div align="center">
-
-  <!-- 草グラフィック -->
-  <img src="https://ghchart.rshah.org/40c463/fatcorn753" alt="fatcorn753's Github Contribution Chart" width="100%" />
-
-</div>
-
-<br />
-
-<div align="center">
-
-  <!-- ランダム名言カード -->
-  <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=dark" alt="Random Dev Quotes" />
-
-</div>
