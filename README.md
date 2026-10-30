@@ -1,3 +1,17 @@
+## 作ったもの
+
+- [Bilingual Caption Overlay for YouTube](https://chromewebstore.google.com/detail/bilingual-caption-overlay/fbkiogggnhmaadaphohfnafjncbainfc)([GitHub](https://github.com/fatcorn753/youtube-bilingual-caption-overlay)): YouTube の字幕と、端末内で作る訳を、最前面の小窓に表示する拡張。**Chrome ウェブストアで公開中**
+- [random-youtube](https://github.com/fatcorn753/random-youtube): YouTube をテレビのように流し続ける拡張
+- [dot_cursor](https://github.com/fatcorn753/dot_cursor): Chrome 拡張
+- [discord-management-bot](https://github.com/fatcorn753/discord-management-bot): 日本語の Discord サーバー管理 Bot(Python)
+- Android アプリ(Kotlin)も、複数作っています
+
+## ご連絡
+
+- [このリポジトリの Issue](https://github.com/fatcorn753/fatcorn753/issues/new) からご相談ください(公開の場なので、個人情報や機密は書かないでください)
+
+---
+
 
 <div align="center">
   <img src="./explosion.svg?v=1" width="100%" alt="fatcorn753" />
