@@ -60,19 +60,3 @@
   <img src="https://img.shields.io/badge/Shell_Script-121011?style=for-the-badge&logo=gnu-bash&logoColor=white" alt="Shell Script" />
 
 </div>
-
-<br />
-
-## 📊 GitHub Analytics
-
-<div align="center">
-
-  <!-- GitHub Stats -->
-  <img height="180" src="https://github-readme-stats.vercel.app/api?username=fatcorn753&show_icons=true&theme=dark&hide_border=true" alt="GitHub Stats" />
-  
-  <!-- 使用言語ランキング -->
-  <img height="180" src="https://github-readme-stats.vercel.app/api/top-langs/?username=fatcorn753&layout=compact&theme=dark&hide_border=true" alt="Top Languages" />
-
-</div>
-
-<br />
